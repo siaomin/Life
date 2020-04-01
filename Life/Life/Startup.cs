@@ -1,7 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using Life.Models.BLL;
+using Life.Models.DAL;
+using Life.Models.Interface.BLL;
+using Life.Models.Interface.DAL;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -30,6 +30,10 @@ namespace Life
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
+            //Dao
+            services.AddTransient<IGuestDao, GuestDao>();
+            //Bao
+            services.AddSingleton<IGuest, Guest>();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }

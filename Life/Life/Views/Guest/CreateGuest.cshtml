@@ -1,0 +1,36 @@
+﻿@using (Html.BeginForm("AddGuest", "Guest", FormMethod.Post, new { @class = "form-horizontal" }))
+{
+
+    <div class="form-group">
+        <label for="Name" class="control-label col-lg-1">姓名</label>
+        <div class="col-lg-4">
+            <input id="Name" type="text" class="form-control" name="Name" placeholder="請輸入姓名" />
+        </div>
+    </div>
+    <div class="form-check form-check-inline" style="margin-bottom: 1rem; margin-left: 0.85rem;">
+        <label for="SexM" class="form-check-label">
+            <input id="SexM" type="radio" name="Sex" value="M" class="form-check-input" />
+            男
+        </label>
+    </div>
+    <div class="form-group form-check form-check-inline" style="margin-bottom: 1rem; margin-left: 0.85rem;">
+        <label for="SexF" class="form-check-label">
+            <input id="SexF" type="radio" name="Sex" value="F" class="form-check-input" />
+            女
+        </label>
+    </div>
+    <div class="form-group">
+        <label for="Cellphone" class="control-label col-lg-1">手機</label>
+        <div class="col-lg-4">
+            <input id="Cellphone" type="text" class="form-control" name="Cellphone" placeholder="請輸入手機號碼" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="Address" class="control-label col-lg-1">地址</label>
+        <div class="col-lg-4">
+            <input id="Address" type="text" class="form-control" name="Address" placeholder="請輸入地址" />
+        </div>
+    </div>
+    <input type="submit" class="btn btn-danger" value="送出" style="margin-bottom: 1rem; margin-left: 0.85rem;" />
+    @Html.ActionLink("返回", "GuestList", "Guest", null, new { @class = "btn btn-outline-primary", style = "margin-bottom: 1rem" })
+}

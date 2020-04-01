@@ -6,23 +6,33 @@
     public class GuestInfo
     {
         /// <summary>
+        /// 編號
+        /// </summary>
+        public int Id { get; set; }
+
+        /// <summary>
         /// 姓名
         /// </summary>
         public string Name { get; set; }
 
         /// <summary>
-        /// 人數
+        /// 性別
         /// </summary>
-        public int Quantity { get; set; }
+        public string Sex { get; set; }
 
         /// <summary>
-        /// 桌號
+        /// 地址
         /// </summary>
-        public int TableNumber { get; set; }
+        public string Address { get; set; }
 
         /// <summary>
-        /// 備註
+        /// 電話
         /// </summary>
-        public string Remark { get; set; }
+        public string Telephone { get; set; }
+
+        /// <summary>
+        /// 手機號碼
+        /// </summary>
+        public string Cellphone { get; set; }
     }
 }

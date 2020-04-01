@@ -1,10 +1,7 @@
 ﻿using Life.Models;
-using Life.Models.Entity;
 using Life.ViewModel.Home;
 using Microsoft.AspNetCore.Mvc;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
 
 namespace Life.Controllers
 {
@@ -13,23 +10,6 @@ namespace Life.Controllers
         public IActionResult Index()
         {
             return View();
-        }
-
-        public IActionResult GuestList()
-        {
-            var guests = new List<GuestInfo>()
-            {
-                new GuestInfo() { Name="阿統伯", Quantity=5, TableNumber=1, Remark=""},
-                new GuestInfo() { Name="阿水嬸", Quantity=4, TableNumber=2, Remark=""},
-                new GuestInfo() { Name="三姑媽", Quantity=6, TableNumber=3, Remark=""},
-                new GuestInfo() { Name="四嬸婆", Quantity=2, TableNumber=1, Remark=""},
-                new GuestInfo() { Name="團長", Quantity=2, TableNumber=1, Remark=""},
-                new GuestInfo() { Name="班", Quantity=2, TableNumber=3, Remark=""},
-                new GuestInfo() { Name="黛安娜", Quantity=2, TableNumber=2, Remark=""},
-                new GuestInfo() { Name="瑪琳", Quantity=2, TableNumber=3, Remark=""}
-            };
-
-            return View(guests.OrderBy(x => x.TableNumber).ToList());
         }
 
         public IActionResult Contact()
