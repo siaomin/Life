@@ -14,6 +14,11 @@ namespace Life.Models.BLL
             this.dao = guestDao;
         }
 
+        public GuestInfo GetGuest(int guestId)
+        {
+            return dao.GetGuest(guestId);
+        }
+
         public List<GuestInfo> GetGuests()
         {
             return dao.GetGuests();
@@ -22,6 +27,11 @@ namespace Life.Models.BLL
         public void AddGuest(GuestInfo guest)
         {
             dao.AddGuest(guest);
+        }
+
+        public void UpdateGuest(GuestInfo guest)
+        {
+            dao.UpdateGuest(guest);
         }
 
         public void RemoveGuest(int guestId)

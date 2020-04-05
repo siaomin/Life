@@ -1,4 +1,6 @@
-﻿@using (Html.BeginForm("AddGuest", "Guest", FormMethod.Post, new { @class = "form-horizontal" }))
+﻿@model Life.ViewModel.Guest.CreateGuestViewModel
+
+@using (Html.BeginForm("AddGuest", "Guest", FormMethod.Post, new { @class = "form-horizontal" }))
 {
 
     <div class="form-group">
@@ -26,11 +28,17 @@
         </div>
     </div>
     <div class="form-group">
+        <label for="Cellphone" class="control-label col-lg-2">縣市</label>
+        <div class="col-lg-4">
+            @Html.DropDownList("City", Model.City, new { @class = "custom-select" })
+        </div>
+    </div>
+    <div class="form-group">
         <label for="Address" class="control-label col-lg-1">地址</label>
         <div class="col-lg-4">
             <input id="Address" type="text" class="form-control" name="Address" placeholder="請輸入地址" />
         </div>
     </div>
-    <input type="submit" class="btn btn-danger" value="送出" style="margin-bottom: 1rem; margin-left: 0.85rem;" />
+    <input type="submit" class="btn btn-outline-primary" value="送出" style="margin-bottom: 1rem; margin-left: 0.85rem;" />
     @Html.ActionLink("返回", "GuestList", "Guest", null, new { @class = "btn btn-outline-primary", style = "margin-bottom: 1rem" })
 }

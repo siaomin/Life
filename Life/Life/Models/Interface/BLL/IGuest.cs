@@ -7,6 +7,10 @@ namespace Life.Models.Interface.BLL
     {
         List<GuestInfo> GetGuests();
 
+        GuestInfo GetGuest(int guestId);
+
+        void UpdateGuest(GuestInfo guest);
+
         void AddGuest(GuestInfo guest);
 
         void RemoveGuest(int guestId);

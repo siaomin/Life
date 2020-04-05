@@ -1,7 +1,7 @@
 ﻿@model List<Life.Models.Entity.GuestInfo>
 
 <div>
-    @Html.ActionLink("新增", "CreateGuest", "Guest", null, new { @class = "btn btn-outline-danger", style = "margin-bottom: 10px" })
+    @Html.ActionLink("新增", "CreateGuest", "Guest", null, new { @class = "btn btn-outline-success", style = "margin-bottom: 10px" })
 </div>
 <table class="table table-bordered table-dark">
     <thead>
@@ -23,7 +23,10 @@
                 <td>@item.Sex</td>
                 <td>@item.Cellphone</td>
                 <td>@item.Address</td>
-                <td><button type="button" class="btn btn-outline-warning" onclick="DeleteGuest(@item.Id)">刪除</button></td>
+                <td>
+                    @Html.ActionLink("修改", "ReviceGuest", "Guest", new { guestId = item.Id}, new { @class = "btn btn-outline-warning" })
+                    <button type="button" class="btn btn-outline-warning" onclick="DeleteGuest(@item.Id)">刪除</button>
+                </td>
             </tr>
         }
     </tbody>

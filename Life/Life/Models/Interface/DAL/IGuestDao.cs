@@ -7,7 +7,11 @@ namespace Life.Models.Interface.DAL
     {
         List<GuestInfo> GetGuests();
 
+        GuestInfo GetGuest(int guestId);
+
         void AddGuest(GuestInfo guest);
+
+        void UpdateGuest(GuestInfo guest);
 
         void RemoveGuest(int guestId);
     }

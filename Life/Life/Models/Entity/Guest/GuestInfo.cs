@@ -21,6 +21,16 @@
         public string Sex { get; set; }
 
         /// <summary>
+        /// 縣市
+        /// </summary>
+        public string City { get; set; }
+
+        /// <summary>
+        /// 鄉鎮
+        /// </summary>
+        public string Town { get; set; }
+
+        /// <summary>
         /// 地址
         /// </summary>
         public string Address { get; set; }

@@ -1,0 +1,45 @@
+﻿@model Life.ViewModel.Guest.ReviceGuestViewModel
+
+@using (Html.BeginForm("UpdateGuest", "Guest", FormMethod.Post, new { @class = "form-horizontal" }))
+{
+    <div class="form-group">
+        <div class="col-lg-4">
+            <input id="Id" type="hidden" class="form-control" name="Id" value="@Model.Guest.Id" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="Name" class="control-label col-lg-1">姓名</label>
+        <div class="col-lg-4">
+            <input id="Name" type="text" class="form-control" name="Name" value="@Model.Guest.Name" />
+        </div>
+    </div>
+    foreach (var item in Model.SexList)
+    {
+        <div class="form-check form-check-inline" style="margin-bottom: 1rem; margin-left: 0.85rem;">
+            <label for="@("Sex" + item.Value)" class="form-check-label">
+                @Html.RadioButton("Sex", item.Value, item.Selected, new { id = "Sex" + item.Value, @class = "form-check-input" })
+                @item.Text
+            </label>
+        </div>
+    }
+    <div class="form-group">
+        <label for="Cellphone" class="control-label col-lg-1">手機</label>
+        <div class="col-lg-4">
+            <input id="Cellphone" type="text" class="form-control" name="Cellphone" value="@Model.Guest.Cellphone" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="Cellphone" class="control-label col-lg-2">縣市</label>
+        <div class="col-lg-4">
+            @Html.DropDownList("City", Model.CityList, new { @class = "custom-select" })
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="Address" class="control-label col-lg-1">地址</label>
+        <div class="col-lg-4">
+            <input id="Address" type="text" class="form-control" name="Address" value="@Model.Guest.Address" />
+        </div>
+    </div>
+    <input type="submit" class="btn btn-outline-primary" value="確認" style="margin-bottom: 1rem; margin-left: 0.85rem;" />
+    @Html.ActionLink("返回", "GuestList", "Guest", null, new { @class = "btn btn-outline-primary", style = "margin-bottom: 1rem" })
+}
